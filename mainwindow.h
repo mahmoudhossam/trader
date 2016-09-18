@@ -14,16 +14,15 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
+    void initializeTableView();
 
 private slots:
-    void on_action_triggered();
+    void on_pushButton_clicked();
 
-    void on_SearchButton_clicked();
+    void on_pushButton_2_clicked();
 
 private:
     Ui::MainWindow *ui;
-    void initializeTableView();
-    void setupCompleter();
 };
 
 #endif // MAINWINDOW_H

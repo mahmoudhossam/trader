@@ -38,3 +38,6 @@ CMakeLists.txt.user*
 
 *_wrapper.bat
 release/*
+
+debug/
+object_script.*

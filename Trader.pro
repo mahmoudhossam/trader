@@ -15,15 +15,24 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     util.cpp \
     merchantsdialog.cpp \
-    db.cpp
+    db.cpp \
+    merchantslist.cpp \
+    merchantdetaildialog.cpp \
+    addtradedialog.cpp
 
 HEADERS  += mainwindow.h \
     util.h \
     merchantsdialog.h \
-    db.h
+    db.h \
+    merchantslist.h \
+    merchantdetaildialog.h \
+    addtradedialog.h
 
 FORMS    += mainwindow.ui \
-    merchantsdialog.ui
+    merchantsdialog.ui \
+    merchantslist.ui \
+    merchantdetaildialog.ui \
+    addtradedialog.ui
 
 PLUGINS += qsqlite
 

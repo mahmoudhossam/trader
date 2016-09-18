@@ -1,9 +1,10 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include <QCompleter>
-#include <util.h>
-#include <db.h>
-#include <merchantsdialog.h>
+#include "util.h"
+#include "db.h"
+#include "merchantsdialog.h"
+#include "merchantslist.h"
+#include "addtradedialog.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -12,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     db::openDatabase();
     this->initializeTableView();
-    setupCompleter();
+    this->showMaximized();
 }
 
 MainWindow::~MainWindow()
@@ -24,23 +25,19 @@ MainWindow::~MainWindow()
 void MainWindow::initializeTableView()
 {
     ui->tableView->setEditTriggers(QAbstractItemView::NoEditTriggers);
-    ui->tableView->setModel(db::getMerchantsModel());
+    ui->tableView->setModel(db::getTradesModel());
+    ui->tableView->horizontalHeader()->setSectionResizeMode(QHeaderView::Stretch);
+    ui->tableView->resizeColumnsToContents();
 }
 
-void MainWindow::on_action_triggered()
+void MainWindow::on_pushButton_clicked()
 {
-    MerchantsDialog dialog;
+    Merchantslist list(this);
+    list.exec();
+}
+
+void MainWindow::on_pushButton_2_clicked()
+{
+    MerchantsDialog dialog(this);
     dialog.exec();
-}
-
-void MainWindow::on_SearchButton_clicked()
-{
-    util::showMessage("Clicked!");
-}
-
-void MainWindow::setupCompleter()
-{
-    QCompleter *completer = new QCompleter(db::getMerchantsNameModel(), this);
-    completer->setCompletionColumn(0);
-    ui->merchantSearch->setCompleter(completer);
 }

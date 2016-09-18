@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>AddTradeDialog</class>
+ <widget class="QDialog" name="AddTradeDialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>259</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>معاملة جديدة</string>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::RightToLeft</enum>
+  </property>
+  <layout class="QFormLayout" name="formLayout">
+   <item row="2" column="0">
+    <widget class="QLabel" name="nameLabel">
+     <property name="text">
+      <string>إسم</string>
+     </property>
+    </widget>
+   </item>
+   <item row="2" column="1">
+    <widget class="QLineEdit" name="nameText">
+     <property name="enabled">
+      <bool>false</bool>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="boxesLabel">
+     <property name="minimumSize">
+      <size>
+       <width>50</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>عدد</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="boxesText"/>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="kilosLabel">
+     <property name="text">
+      <string>كيلو</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0">
+    <widget class="QLabel" name="priceLabel">
+     <property name="text">
+      <string>سعر الكيلو</string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="1">
+    <widget class="QLineEdit" name="priceText"/>
+   </item>
+   <item row="6" column="0">
+    <widget class="QLabel" name="productLabel">
+     <property name="minimumSize">
+      <size>
+       <width>50</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>الصنف</string>
+     </property>
+    </widget>
+   </item>
+   <item row="6" column="1">
+    <widget class="QLineEdit" name="productText"/>
+   </item>
+   <item row="8" column="1">
+    <widget class="Line" name="line">
+     <property name="lineWidth">
+      <number>1</number>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="9" column="0">
+    <widget class="QLabel" name="totalLabel">
+     <property name="minimumSize">
+      <size>
+       <width>50</width>
+       <height>0</height>
+      </size>
+     </property>
+     <property name="text">
+      <string>الإجمالى</string>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="1">
+    <widget class="QLineEdit" name="kilosText"/>
+   </item>
+   <item row="9" column="1">
+    <widget class="QLineEdit" name="totalText"/>
+   </item>
+   <item row="0" column="0">
+    <widget class="QRadioButton" name="goodsRadio">
+     <property name="text">
+      <string>بضاعة</string>
+     </property>
+    </widget>
+   </item>
+   <item row="0" column="1">
+    <widget class="QRadioButton" name="cashRadio">
+     <property name="text">
+      <string>نقدية</string>
+     </property>
+    </widget>
+   </item>
+   <item row="11" column="1">
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="layoutDirection">
+      <enum>Qt::RightToLeft</enum>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+     <property name="centerButtons">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>boxesText</tabstop>
+  <tabstop>kilosText</tabstop>
+  <tabstop>priceText</tabstop>
+  <tabstop>productText</tabstop>
+  <tabstop>goodsRadio</tabstop>
+  <tabstop>cashRadio</tabstop>
+  <tabstop>totalText</tabstop>
+  <tabstop>nameText</tabstop>
+ </tabstops>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>accepted()</signal>
+   <receiver>AddTradeDialog</receiver>
+   <slot>accept()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>248</x>
+     <y>254</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>157</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>buttonBox</sender>
+   <signal>rejected()</signal>
+   <receiver>AddTradeDialog</receiver>
+   <slot>reject()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>316</x>
+     <y>260</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>286</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+</ui>
